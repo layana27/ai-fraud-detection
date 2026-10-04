@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI-Based Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+<h1>AI-Based Fraud Detection</h1>
+
+        <p>
+            Detect suspicious transactions using an AI-based fraud detection system.
+        </p>
+
+        <form method="POST">
+
+            <label>Transaction Amount</label>
+            <input type="number" name="amount" placeholder="Enter amount" required>
+
+            <label>Transaction Type</label>
+            <select name="transaction_type">
+                <option value="online">Online</option>
+                <option value="card">Card</option>
+                <option value="cash">Cash</option>
+            </select>
+
+            <label>Transaction Location</label>
+            <input type="text" name="location" placeholder="Enter location" required>
+
+            <button type="submit">Check for Fraud</button>
+
+        </form>
+
+{% if result %}
+    <div class="result {% if 'Suspicious' in result %}fraud{% elif 'Safe' in result %}safe{% else %}warning{% endif %}">
+        <h2>{{ result }}</h2>
+
+        <p>{{ reason }}</p>
+
+        <hr>
+
+        <p>
+            <strong>Transaction Amount:</strong>
+            ₹{{ request.form.get('amount') }}
+        </p>
+
+        <p>
+            <strong>Transaction Type:</strong>
+            {{ request.form.get('transaction_type') }}
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            {{ request.form.get('location') }}
+        </p>
+    </div>
+{% endif %}
+
+</div>
+<footer>
+    <p>© 2026 AI-Based Fraud Detection | BCA Project</p>
+</footer>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
