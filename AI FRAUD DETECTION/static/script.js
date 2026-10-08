@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
+    const form = document.getElementById("transactionForm");
     const amountInput = document.querySelector('input[name="amount"]');
 
     form.addEventListener("submit", function (event) {
