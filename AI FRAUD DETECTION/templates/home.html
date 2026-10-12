@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Shield | Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="home-page">
+
+    <header class="site-header">
+        <a href="/" class="brand">
+            <span class="brand-logo">🛡</span>
+            <span>AI <strong>SHIELD</strong></span>
+        </a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="{{ url_for('login') }}" class="nav-button">Login</a>
+        </nav>
+    </header>
+
+    <main class="hero" id="about">
+        <div class="hero-content">
+            <span class="eyebrow">SMARTER TRANSACTION SECURITY</span>
+
+            <h1>Detect Fraud.<br>
+                <span>Protect Every Transaction.</span>
+            </h1>
+
+            <p>
+                AI-Based Fraud Detection helps analyse transaction details
+                using a machine-learning model to identify potentially
+                suspicious activity.
+            </p>
+
+            <div class="hero-actions">
+                <a href="{{ url_for('signup') }}" class="primary-button">
+                    Get Started →
+                </a>
+
+                <a href="{{ url_for('login') }}" class="secondary-button">
+                    Already have an account?
+                </a>
+            </div>
+
+            <p class="disclaimer">
+                This academic project provides predictions, not a guarantee
+                that a transaction is safe or fraudulent.
+            </p>
+        </div>
+
+        <div class="security-illustration" aria-hidden="true">
+            <div class="shield-circle">
+                <span class="big-shield">🛡️</span>
+                <span class="check-mark">✓</span>
+            </div>
+            <div class="floating-label">AI-Powered Analysis</div>
+        </div>
+    </main>
+
+    <section class="features" id="features">
+        <h2>Our Key Features</h2>
+
+        <div class="feature-grid">
+            <article class="feature-card">
+                <span class="feature-icon">🤖</span>
+                <h3>Machine Learning</h3>
+                <p>Uses a trained model to analyse transaction information.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon">🔍</span>
+                <h3>Fraud Analysis</h3>
+                <p>Displays whether a transaction is predicted as safe or suspicious.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon">☁️</span>
+                <h3>Cloud Deployment</h3>
+                <p>Designed to make the web application accessible online.</p>
+            </article>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>© 2026 AI-Based Fraud Detection | BCA Project</p>
+    </footer>
+
+</body>
+</html>
